@@ -1,0 +1,18 @@
+    {
+        "cmd": ["java", "$file_base_name"],
+        "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+        "selector": "source.java",
+        "variants": [
+            {
+                "name": "JavaRun",
+                "shell": true,
+                "cmd" :  ["start","cmd","/c", "java ${file_base_name} &echo. & pause"],
+                "working_dir": "${file_path}",
+                "encoding":"GBK"
+            },
+            {
+              "name": "JavaGo",
+              "cmd": ["java", "$file_base_name"]
+            }
+        ]
+    }
