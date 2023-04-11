@@ -5,30 +5,34 @@ typedef long long ll;
 typedef long double ld;
 #define int ll
 
+const int maxn = 1e6;
+const int K = 100;
+ld dp[maxn][K + 5];
+
 int solve(){
 
-    string s;
-    cin>>s;
-    int n = s.size();
-    int cnt = 0;
-    vector<set<int>> pos(26);
-    for (int i=0;i<n;i++){
-        pos[s[i]-'a'].insert(i);
-    }
-    for (int i=0;i<26;i++)cnt += pos[i].size() % 2;
-    if (cnt > 1) {
-        cout<<-1<<"\n";
-        return 0;
-    }
-    for (int i=0;i<(n + 1)/2;i++){
-        int mn = 1e9;
-        int ch = 0;
-        for (int j=0;j<26;j++){
-            if (pos[j].size() < 2)continue;
-            int val = *pos[j].begin();
+    cout << setprecision(10) << fixed;
 
+    dp[0][0] = 1;
+    dp[0][K] = 1;
+
+    for (int i = 1; i < maxn; i++) {
+        for (int j = 1; j < K; j++) {
+            ld q = (ld)j * (K - j) / ((K - 1) * K);
+
+            dp[i][j] = q * dp[i - 1][j - 1] + q * dp[i - 1][j + 1] + ((ld) 1 - 2 * q) * dp[i - 1][j];
         }
     }
+
+    for (int i = 0; i < K; i++) {
+        cout << dp[i][1] << "\n";
+    }
+
+    ld ans = 0;
+    for (int i = 1; i < maxn; i++) {
+        ans += i * dp[i][1];
+    }
+    cout << setprecision(6) << fixed << (ld)ans << "\n";
 
     return 0;
 

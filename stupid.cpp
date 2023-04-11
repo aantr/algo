@@ -1,94 +1,75 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
 typedef long double ld;
-#define pb push_back
+#define int ll
+#define TIME (double) clock() / CLOCKS_PER_SEC
 #define x first
 #define y second
-#define all(x) x.begin(), x.end()
-#define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
-mt19937 rnd(chrono::steady_clock::now().time_since_epoch().count());
+const int inf = 1e9;
 
-//#define int ll
-
-string makestr(int s, int n){
-    string res;
-    for (int i=0;i<n;i++){
-        res+=(s&1)+'0';
-        s>>=1;
+int solve(){
+    int n, k;
+    cin >> n >> k;
+    map<int, int> MN;
+    std::vector<array<int, 2>> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i][0];
     }
-    return res;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i][1];
+    }
+    for (int i = 0; i < n; i++) {
+        if (MN.find(a[i][0]) == MN.end()) {
+            MN[a[i][0]] = a[i][1];
+        } else {
+            MN[a[i][0]] = min(MN[a[i][0]], a[i][1]);
+        }
+    }
+    sort(a.begin(), a.end());
+    for (int i = 0; i < n; i++) {
+        a[i][1] = MN[a[i][0]];
+    }
+    vector<int> mn(n);
+    mn[0] = a[n - 1][1];
+    for (int i = 1; i < n; i++) {
+        mn[i] = min(mn[i - 1], a[n - 1 - i][1]);
+    }
+    int tot = 0;
+    for (int i = 0; i < n; i++) {
+        a[i][0] -= tot;
+        if (a[i][0] > 0 && i) {
+            k -= mn[n - 1 - i];
+        }
+        while (a[i][0] > 0) {
+            if (k < 0){
+                cout << "NO\n";
+                return 0;
+            }
+            tot += k;
+            a[i][0] -= k;
+            if (a[i][0] > 0) {
+                k -= mn[n - 1 - i];
+            }
+        }
+    }
+    cout << "YES\n";
+    return 0;
 }
 
-void solve() {
-    
-    int n, m;
-    cin>>n>>m;
+/*
 
-    int l=n;
-    vector<array<int, 3>> left, right, middle;
-    for (int i=0;i<m;i++){
-        int L, R, X;
-        cin>>L>>R>>X;
-        L--;
-        left.push_back({L, R, X});
-    }
-
-    string ans;
-    int sum=n;
-    for (int i=0;i<n;i++){
-        ans+="1 ";
-    }
-
-    for (int mask=0;mask<(1<<l);mask++){
-        int ok=1;
-        vector<int> p(l+1);
-        for (int i=0;i<l;i++){
-            p[i+1]=p[i]+(mask>>i&1);
-            p[i+1]%=2;
-        }
-        for (auto check : left){
-            ok &= (p[check[1]]+p[check[0]])%2==check[2];
-        }
-        if (ok){
-            string s;
-            int Sum=0;
-            ll cur = mask;
-            for (int i=0;i<n;i++){
-                s+=(cur&1)+'0';
-                Sum +=cur&1;
-                cur>>=1;
-                s+=' ';
-            }
-            if (Sum < sum || (Sum == sum && s < ans)){
-                ans=s;
-                sum=Sum;
-            }
-            
-        }
-        
-    }
-
-    cout<<ans<<endl;
-   
-}
+(k * 2 - (m - 1) * R) * m / 2 >= a[i][0]
 
 
+*/
 signed main(){
-    fast;
-    int t=1;
-    freopen("stupid.out", "w", stdout);
-    #ifndef ON_PC
-    /*freopen("hull.in", "r", stdin);
-    freopen("hull.out", "w", stdout);*/
-    #endif
-    //cin>>t;
-    while(t--){
-        int time = chrono::duration_cast<chrono::milliseconds>(chrono::system_clock::now().time_since_epoch()).count();
-        solve();
-        cerr<<endl<<"[finished in "<< 
-        clock()*1.0/CLOCKS_PER_SEC
-         << " sec]\n--------\n"<<endl;
+    ios::sync_with_stdio(0);cin.tie(0);
+    int t = 1e9;
+    cin>>t;
+    while (t--) {
+        if (solve()) break;
     }
+    cerr<<"Time: "<<TIME<<endl;
 }
