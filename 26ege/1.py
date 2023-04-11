@@ -1,3 +1,5 @@
+# https://kompege.ru/variant?kim=25023734
+
 import sys
 sys.stdin = open('input.txt')
 
