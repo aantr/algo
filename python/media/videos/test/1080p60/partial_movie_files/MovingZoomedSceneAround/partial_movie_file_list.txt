@@ -1,0 +1,13 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/aantr/Desktop/algo/python/media/videos/test/1080p60/partial_movie_files/MovingZoomedSceneAround/3962374051_2389942583_493510864.mp4'
+file 'file:C:/Users/aantr/Desktop/algo/python/media/videos/test/1080p60/partial_movie_files/MovingZoomedSceneAround/2145453854_1043710159_3531147597.mp4'
+file 'file:C:/Users/aantr/Desktop/algo/python/media/videos/test/1080p60/partial_movie_files/MovingZoomedSceneAround/3879923313_3016619614_521375324.mp4'
+file 'file:C:/Users/aantr/Desktop/algo/python/media/videos/test/1080p60/partial_movie_files/MovingZoomedSceneAround/2826091339_1033574598_4270249629.mp4'
+file 'file:C:/Users/aantr/Desktop/algo/python/media/videos/test/1080p60/partial_movie_files/MovingZoomedSceneAround/2644353882_3837998516_320809510.mp4'
+file 'file:C:/Users/aantr/Desktop/algo/python/media/videos/test/1080p60/partial_movie_files/MovingZoomedSceneAround/3965453277_4188670345_4151428894.mp4'
+file 'file:C:/Users/aantr/Desktop/algo/python/media/videos/test/1080p60/partial_movie_files/MovingZoomedSceneAround/2028931158_3837998516_2794995783.mp4'
+file 'file:C:/Users/aantr/Desktop/algo/python/media/videos/test/1080p60/partial_movie_files/MovingZoomedSceneAround/822424472_3315009788_5827796.mp4'
+file 'file:C:/Users/aantr/Desktop/algo/python/media/videos/test/1080p60/partial_movie_files/MovingZoomedSceneAround/277277074_3837998516_3764601494.mp4'
+file 'file:C:/Users/aantr/Desktop/algo/python/media/videos/test/1080p60/partial_movie_files/MovingZoomedSceneAround/3658767325_495176716_2849939156.mp4'
+file 'file:C:/Users/aantr/Desktop/algo/python/media/videos/test/1080p60/partial_movie_files/MovingZoomedSceneAround/2859793890_3971504731_1766620673.mp4'
+file 'file:C:/Users/aantr/Desktop/algo/python/media/videos/test/1080p60/partial_movie_files/MovingZoomedSceneAround/3989029970_3397463857_3299030690.mp4'
