@@ -2,7 +2,7 @@ from random import *
 
 p = [2,3,5,7]
 mx = [10, 4, 3, 2]
-n = 100000
+n = 1000000
 print(n)
 for i in range(n):
 	v = 1
