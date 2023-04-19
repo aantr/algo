@@ -15,13 +15,11 @@ def update(pos, val):
 		tree[i] += val
 		i += i & -i
 
-def get_kth(k):
+def get_first():
 	pos = 0
 	for i in range(20, -1, -1):
-		if (1 << i) + pos < N and tree[(1 << i) + pos] < k:
-			k -= tree[(1 << i) + pos]
-			pos += 1 << i
-	assert k == 1
+		if ((1 << i) | pos) < N and tree[(1 << i) | pos] == 0:
+			pos |= 1 << i
 	return pos
 
 act = []
@@ -39,7 +37,7 @@ for i in range(2 * n):
 	if act[i][1] == 0:
 		if s == 0:
 			continue
-		j = get_kth(1)
+		j = get_first()
 		place[act[i][2]] = j
 		update(j, -1)
 		s -= 1

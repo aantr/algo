@@ -2,8 +2,8 @@ from random import *
 import os
 os.stdout = open('input.txt', 'w')
 
-n = randint(10000, 2 * 10000)
-k = randint(10000, 2 * 10000)
+n = int(1e6)
+k = int(1e6)
 print(k)
 print(n)
 
