@@ -1,38 +1,13 @@
-2
-12
-add a.cpp 1f1f1f
-reset 1
-commit
-checkout dev
-reset 1
-add a.cpp d2d2d2
-commit
-rebase main
-reset 1
-add b.cpp abc123
-commit
-rebase main
-23
-add main.cpp 1a44bf
-add conf.json 3bb3c1
-commit
-add conf.json 11fdd5
-checkout new_config
-commit
-checkout new_config
-checkout main
-reset 2
-checkout experimental
-add driver.cpp b19de7
-commit
-checkout main
-add main.cpp aa46ac
-add core/db.cpp f78c43
-commit
-add core/socket.cpp 554d3b
-commit
-checkout new_config
-add conf.json bbf451
-commit
-checkout main
-rebase new_config
+6
+5 1
+1 1 1 1 1
+4 0
+0 1 2 3
+5 1
+5 5 7 4 2
+1 2
+3
+12 0
+0 2 0 2 0 2 0 2 0 2 0 2
+10 6
+63 0 63 5 5 63 63 4 12 13
